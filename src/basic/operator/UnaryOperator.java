@@ -19,7 +19,7 @@ public class UnaryOperator {
 
         int x = 1;
         int y = ++x; // 전위 연산 (선 증감 후 연산)
-        int z = --y;
+        int z = --x;
 
         System.out.println("x = " + x);
         System.out.println("y = " + y);
