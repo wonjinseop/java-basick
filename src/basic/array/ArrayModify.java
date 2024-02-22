@@ -35,16 +35,7 @@ public class ArrayModify {
 
         System.out.println("foods = " + foods);
 
-
-
-
-
-
-
-
-
-
-
+        sc.close();
 
     }
 

@@ -20,11 +20,11 @@ public class ArrayModifyQuiz {
         String[] kakao = {"무지", "네오", "어피치", "라이언", "춘식이"};
         System.out.println("현재 저장된 친구들: " + Arrays.toString(kakao));
 
-        String changeName = "";
-        String newName = "";
+
         outer: while (true) {
             System.out.print("수정할 이름을 입력하세요: ");
             String name = sc.next();
+            String newName;
 
             boolean flag = false;
             int i;
@@ -38,20 +38,25 @@ public class ArrayModifyQuiz {
 
             if (!flag) {
                 System.out.println("없는 이름입니다.");
+                System.out.println("다시 입력하세요.");
                 continue outer;
             }
 
             System.out.print("새 이름을 입력하세요: ");
             newName = sc.next();
 
-            changeName = kakao[i];
+            name = kakao[i];
             kakao[i] = newName;
+
+            System.out.println("-------------------------------------------------");
+            System.out.printf("변경된 이름: %s -> %s\n",name ,newName);
+            System.out.println(Arrays.toString(kakao));
 
             break;
         }
 
-        System.out.printf("변경된 이름: %s -> %s\n",changeName ,newName);
-        System.out.println(Arrays.toString(kakao));
+
+        sc.close();
 
     }
 
