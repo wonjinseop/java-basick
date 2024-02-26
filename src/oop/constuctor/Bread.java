@@ -13,10 +13,10 @@ public class Bread {
 
     Bread() {}
 
-    Bread(String bName, int bPrice, String bIngredient) {
-        name = bName;
-        price = bPrice;
-        ingredient = bIngredient;
+    Bread(String name, int price, String ingredient) {
+        this.name = name;
+        this.price = price;
+        this.ingredient = ingredient;
     }
 
 
