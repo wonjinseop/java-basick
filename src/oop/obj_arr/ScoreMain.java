@@ -25,25 +25,106 @@ public class ScoreMain {
         */
 
         Scanner sc = new Scanner(System.in);
-        Score[] score = new Score[100];
+        Score[] scoreList = new Score[100];
+        System.out.println("*** 학생 점수 입력 프로그램 ***");
+        System.out.println("이름 입력창에 '그만'을 입력하시면 종료됩니다.");
 
-        for (int i = 0; i < score.length; i++) {
-            System.out.print("이름: ");
+//        for (int i = 0; i < scoreList.length; i++) {
+//            System.out.print("이름: ");
+//            String name = sc.next();
+//            if(name.equals("그만")) {
+//                break;
+//            }
+//            System.out.print("국어 점수: ");
+//            int korean = sc.nextInt();
+//            if(!scoreList[i].isValidateScore(korean)) {
+//                i--;
+//                continue;
+//            }
+//
+//            System.out.print("영어 점수: ");
+//            int english = sc.nextInt();
+//            if(!scoreList[i].isValidateScore(english)) {
+//                i--;
+//                continue;
+//            }
+//
+//            System.out.print("수학 점수: ");
+//            int math = sc.nextInt();
+//            if(!scoreList[i].isValidateScore(math)) {
+//                i--;
+//                continue;
+//            }
+//
+//            scoreList[i] = new Score(name, korean, english, math);
+//        }
+//
+//        for (Score s : scoreList) {
+//            if (s == null) break;
+//            s.scoreInfo();
+//            System.out.println("-------------------------------------");
+//        }
+
+
+        // while
+
+        int idx = 0;
+
+//        while (scoreList[scoreList.length-1] == null) {
+        while (idx != scoreList.length) {
+
+            System.out.print("# 이름: ");
             String name = sc.next();
-            if(name.equals("그만")) {
-                return;
+            if (name.equals("그만")) {
+                System.out.println("입력을 종료합니다.");
+                break;
             }
-            System.out.print("국어: ");
-            int korean = sc.nextInt();
-            System.out.print("영어: ");
-            int english = sc.nextInt();
-            System.out.print("수학: ");
+
+            Score s = new Score();
+
+            System.out.print("# 국어: ");
+            int kor = sc.nextInt();
+            if(!s.isValidateScore(kor)) {
+                continue;
+            }
+
+            System.out.print("# 영어: ");
+            int eng = sc.nextInt();
+            if(!s.isValidateScore(eng)) {
+                continue;
+            }
+
+            System.out.print("# 수학: ");
             int math = sc.nextInt();
+            if(!s.isValidateScore(math)) {
+                continue;
+            }
 
-            System.out.println("*** 정보 입력 완료! ***");
+            s.setName(name);
+            s.setKorean(kor);
+            s.setEnglish(eng);
+            s.setMath(math);
+            s.setTotalAndAvg();
 
-            score[i] = new Score(name, korean, english, math);
+//            int total = kor + eng + math;
+//            double avg = total / 3.0;
+//            s.setTotal = total;
+//            s.setAverage = avg;
+
+            scoreList[idx] = s;
+            idx++;
+
+            System.out.println("*** 학생 정보 입력 완료! ***\n");
+
+        } // 입력 반복문 끝
+
+        for (Score score : scoreList) {
+            if (score == null) break;
+            score.scoreInfo();
+            System.out.println("-------------------------------------");
         }
+
+        sc.close();
 
     }
 

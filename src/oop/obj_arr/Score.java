@@ -55,38 +55,53 @@ public class Score {
         return total;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
-    }
+//    public void setTotal() {
+//        this.total = this.korean + this.english + this.math;
+//    }
 
     public double getAverage() {
         return average;
     }
 
-    public void setAverage(double average) {
-        this.average = average;
+//    public void setAverage() {
+//        this.average = this.total / 3.0;
+//    }
+
+    // 점수 유효성 검증
+//    int scoreTotal() {
+//        return korean + english + math;
+//    }
+
+//    double scoreAverage() {
+//        return total / 3.0;
+//    }
+
+    // 총점과 평균을 한번에 계산해서 세팅하는 메서드
+    public void setTotalAndAvg() {
+        this.total = this.korean + this.english + this.math;
+        this.average = this.total / 3.0;
     }
 
-    public Score(String name, int korean, int english, int math) {
-        this.name = name;
-        this.korean = korean;
-        this.english = english;
-        this.math = math;
-        this.total = scoreTotal();
-        this.average = scoreAverage();
-    }
-
-    int scoreTotal() {
-        return korean + english + math;
-    }
-
-    double scoreAverage() {
-        return total / 3.0;
+    public boolean isValidateScore(int score) {
+        if(score > 100 || score < 0) {
+            System.out.println("유효하지 않은 점수입니다. (0 ~ 100)");
+            return false;
+        }
+        return true;
     }
 
     void scoreInfo() {
-        System.out.printf("이름: %s\n국어: %d점\n영어: %d점\n수학: %d점\n총점: %d점\n평균: %f.2점\n"
+        System.out.printf("이름: %s\n국어: %d점  영어: %d점  수학: %d점\n총점: %d점\n평균: %.2f점\n"
                 , this.name, this.korean, this.english, this.math, this.total, this.average);
     }
+
+//        public Score(String name, int korean, int english, int math) {
+//        this.name = name;
+//        this.korean = korean;
+//        this.english = english;
+//        this.math = math;
+//        this.total = scoreTotal();
+//        this.average = scoreAverage();
+//    }
 
 }
