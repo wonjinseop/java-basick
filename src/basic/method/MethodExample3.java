@@ -30,6 +30,9 @@ package basic.method;
 
 */
 
+import static util.Utility.input;
+import static util.Utility.makeLine;
+
 public class MethodExample3 {
 
     static int add(int n1, int n2) {
@@ -84,6 +87,11 @@ public class MethodExample3 {
 //        add(multi(4,4);, multi(5,6);); (x)
 
         divide(20, 0);
+        
+        makeLine();
+        
+        String name = input("이름을 입력하세요: ");
+        System.out.println("name = " + name);
 
     }
 
