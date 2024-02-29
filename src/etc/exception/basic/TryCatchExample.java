@@ -26,7 +26,7 @@ public class TryCatchExample {
         
         
             // try 블록에는 예외 발생 가능성이 있는 코드를 배치합니다.
-            System.out.printf("%d / %d = %.2f\n", i, j, (double) i/j);
+            System.out.printf("%d / %d = %d\n", i, j, i/j);
         } catch (Exception e) {
             // catch 블록에는 try 블록에서 실제 예외가 발생했을 경우
             // 실행할 코드를 작성합니다.
