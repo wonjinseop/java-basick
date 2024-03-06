@@ -9,7 +9,7 @@ public class StreamCopy {
     
     public static void main(String[] args) {
         
-        try(FileOutputStream fos = new FileOutputStream("C:/MyWorkspace/copy.png");
+        try(FileOutputStream fos = new FileOutputStream("C:/MyWorkspace/copy.jpg");
                 FileInputStream fis = new FileInputStream("C:/MyWorkspace/sunflowers-8351807_1280.jpg")) {
             
             int data = 0;
