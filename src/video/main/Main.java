@@ -2,8 +2,7 @@ package video.main;
 
 import video.ui.AppUi;
 
-import static video.ui.AppUi.inputInteger;
-import static video.ui.AppUi.startScreen;
+import static video.ui.AppUi.*;
 
 public class Main {
     
