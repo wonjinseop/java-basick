@@ -2,7 +2,6 @@ package video.user.repository;
 
 import video.user.domain.User;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,5 +34,9 @@ public class UserRepository {
     
     public User deleteUser(int delUserNum) {
         return userDatabase.remove(delUserNum);
+    }
+    
+    public User findUserByNumber(int userNumber) {
+        return userDatabase.get(userNumber);
     }
 }

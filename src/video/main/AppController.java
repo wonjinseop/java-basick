@@ -11,6 +11,7 @@ public class AppController {
     
     // 선택한 메뉴에 따라 시스템을 정해주는 기능
     public void chooseSystem(int selectNumber) {
+         service = null;
         switch (selectNumber) {
             case 1:
                 service = new UserService();
@@ -28,7 +29,11 @@ public class AppController {
                 System.out.println("### 메뉴를 다시 입력하세요!");
         }
         
-        service.start();
+        try {
+            service.start();
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
         
     }
     
