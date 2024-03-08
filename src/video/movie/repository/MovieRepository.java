@@ -143,7 +143,7 @@ public class MovieRepository {
     }
     
     // 번호에 맞는 영화 객체를 단 하나만 리턴하는 메서드.
-    public Movie searchMovieList(int movieNumber) {
+    public Movie searchMovie(int movieNumber) {
         return movieDatabase.get(movieNumber);
     }
 }

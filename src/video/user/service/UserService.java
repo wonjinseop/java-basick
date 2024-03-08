@@ -25,7 +25,7 @@ public class UserService implements AppService {
                     join();
                     break;
                 case 2:
-                    searchUser();
+                    showSearchUser();
                     break;
                 case 3:
                     deleteUser();
